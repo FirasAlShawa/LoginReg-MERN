@@ -10,11 +10,10 @@ const User = require("../models/User")
 
 users.use(cors())
 
-user.use(body)
-
-user.use(bodyparser.urlencoded({
-    extended : true
-}))
+// user.use(bodyparser.json())
+// user.use(bodyparser.urlencoded({
+//     extended : true
+// }))
 
 process.env.SECRET_KEY = 'secret'
 
@@ -54,7 +53,7 @@ users.post('/register',(req,res) => {
 })
 
 users.post('/loginnn',(req,res) => {
-    // res.send('POST request to the homepage')
+    res.send('Loging Route is Working')
 })
 
 module.exports = users
