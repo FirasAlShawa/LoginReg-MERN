@@ -16,9 +16,13 @@ const UserSchema = new Schema({
     phone:{
         type : Number
     },
-    date:{
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    password:{
         type : String,
-        default : Date.now
+        required : true
     }
 })
 

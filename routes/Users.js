@@ -1,5 +1,6 @@
 const express = require("express")
-const users = express.Router();
+const users = express.Router()
+const bodyparser = require("body-parser")
 const cors = require("cors")
 const jwt  = require("jsonwebtoken")
 const bcryptjs = require("bcryptjs")
@@ -8,6 +9,12 @@ const User = require("../models/User")
 
 
 users.use(cors())
+
+user.use(body)
+
+user.use(bodyparser.urlencoded({
+    extended : true
+}))
 
 process.env.SECRET_KEY = 'secret'
 
@@ -32,18 +39,22 @@ users.post('/register',(req,res) => {
                 userData.password = hash 
                 User.create(userData)
                 .then(user =>{
-                    res.json({status :user.email + 'registered'})
+                    res.json({status :user.email + ' registered'})
                 })
                 .catch(err =>{
                     res.send('error : ' + err)
                 })
             })
         }else{
-            res.send({error : "User already exists !"})
+            res.send({error : "User already exists ! hi"})
         }
     }).catch(err =>{
         res.send("error : " + err)
     })
+})
+
+users.post('/loginnn',(req,res) => {
+    // res.send('POST request to the homepage')
 })
 
 module.exports = users

@@ -18,7 +18,7 @@ mongoose.connect(mongoURI,{useNewUrlParser : true});
 const connection = mongoose.connection;
 
 connection.once('open',function(){
-    console.log("MongoDB databaseconnectin established succesfully");
+    console.log("MongoDB DB Connection established succesfully");
 })
 
 
