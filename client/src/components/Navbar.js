@@ -11,14 +11,14 @@ class Navbar extends Component{
         const RegularLinks = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <link to="/loginnn" className="nav-link">
+                    <Link to="/loginnn" className="nav-link">
                         Login
-                    </link>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <link to="/register" className="nav-link">
+                    <Link to="/register" className="nav-link">
                         Register
-                    </link>
+                    </Link>
                 </li>
             </ul>
         )
@@ -26,19 +26,19 @@ class Navbar extends Component{
         const UserLinks = (
             <ul className="navbar-nav">
                 <li className="nav-item">
-                    <link to="/profile" className="nav-link">
+                    <Link to="/profile" className="nav-link">
                         User
-                    </link>
+                    </Link>
                 </li>
                 <li className="nav-item">
-                    <link to="/register" className="nav-link">
+                    <Link to="/register" className="nav-link">
                         Register
-                    </link>
+                    </Link>
+                </li>
 
                     <a href="" onClick={this.logOut.bind(this)} className="nav-link">
                         Logout
                     </a>
-                </li>
             </ul>
         )
 

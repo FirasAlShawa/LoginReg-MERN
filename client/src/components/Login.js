@@ -10,10 +10,14 @@ class Login extends Component {
         }
 
         this.onChange = this.onChange.bind(this)
-        this.OnSubmit = this.OnSubmit.bind(this)
+        this.onSubmit = this.onSubmit.bind(this)
     }
 
     onChange(e){
+        this.setState({[e.target.name] : e.target.value})
+    }
+
+    onSubmit(e){
         e.preventDefault()
 
         const user = {
@@ -23,39 +27,39 @@ class Login extends Component {
 
         login(user).then(res =>{
             if(res){
-                this.props.history.push(`/profile`)
+                this.props.history.push("/profile")
             }
         })
     }
 
     render(){
         return(
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 mt-5 mx-auto">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6 mt-5 mx-auto">
                             <form novalidate onSubmit={this.onSubmit}>
-                                <h1 class="h3 mb3 font-weight-normal">
+                                <h1 className="h3 mb3 font-weight-normal">
                                     Please sign in
                                 </h1>
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="email">Email Address</label>
                                     <input  type="email"
-                                            class="form-control"
+                                            className="form-control"
                                             name="email"
                                             placeholder="Enter Email"
                                             value = {this.state.email}
                                             onChange={this.onChange}/>
                                 </div>
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="password">Password</label>
                                     <input  type="password"
-                                            class="form-control"
+                                            className="form-control"
                                             name="password"
                                             placeholder="Enter password"
                                             value = {this.state.password}
                                             onChange={this.onChange}/>
                                 </div>
-                                <button type="submit" class="btn btn-lg btn-primary btb-block">
+                                <button type="submit" className="btn btn-lg btn-primary btb-block">
                                     Sign in
                                 </button>
                             </form>
