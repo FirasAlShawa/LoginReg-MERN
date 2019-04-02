@@ -16,7 +16,7 @@ class Login extends Component {
     onChange(e){
         e.preventDefault()
 
-        const User = {
+        const user = {
             email : this.state.email,
             password : this.state.password
         }
