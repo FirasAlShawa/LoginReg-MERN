@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import {login} from "./UserFunctions"
+import {Link , withRouter} from 'react-router-dom'
 
 class Login extends Component {
     constructor(){
@@ -29,6 +30,8 @@ class Login extends Component {
             if(res){
                 this.props.history.push("/profile")
             }
+        }).catch(err =>{
+            console.log("err" + err )
         })
     }
 
@@ -70,4 +73,4 @@ class Login extends Component {
     }
 }
 
-export default Login
+export default withRouter(Login)

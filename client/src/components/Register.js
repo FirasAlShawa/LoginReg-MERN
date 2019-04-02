@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import {register} from "./UserFunctions"
+import {Link , withRouter} from 'react-router-dom'
 
 class Register extends Component {
     constructor(){
@@ -32,7 +33,7 @@ class Register extends Component {
         }
 
         register(user).then(res =>{
-            this.props.history.push(`/login`)
+            this.props.history.push("/login")
         })
     }
 
@@ -101,4 +102,4 @@ class Register extends Component {
     }
 }
 
-export default Register
+export default withRouter(Register)
